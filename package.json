@@ -1,0 +1,13 @@
+{
+  "name": "defer-tools-marketplace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "claude plugin test plugins/defer-tools",
+    "typecheck": "tsc -p tsconfig.plugin.json",
+    "validate": "claude plugin validate . && claude plugin validate plugins/defer-tools"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}

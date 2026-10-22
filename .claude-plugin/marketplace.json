@@ -1,0 +1,21 @@
+{
+  "name": "defer-tools",
+  "owner": {
+    "name": "Brian"
+  },
+  "description": "Local marketplace for the defer-tools mod.",
+  "metadata": {
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "defer-tools",
+      "source": "./plugins/defer-tools",
+      "version": "0.1.0",
+      "description": "Moves rarely used built-in tools behind ToolSearch, so their schemas load into context when Claude first calls them.",
+      "author": {
+        "name": "Brian"
+      }
+    }
+  ]
+}
