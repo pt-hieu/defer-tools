@@ -46,7 +46,7 @@ bun run test
 bun run typecheck
 ```
 
-`typecheck` reads the API types in `plugins/defer-tools/.claude-plugin/types/`. The engine writes them when it loads the mod, and they are committed, so a fresh clone type checks as is. Commit them again when a Claude Code upgrade rewrites them.
+`typecheck` reads the API types the engine writes to `plugins/defer-tools/.claude-plugin/types/` when it first loads the mod, so load the mod once with `--plugin-dir` before running it.
 
 ## License
 
