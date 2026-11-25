@@ -5,14 +5,14 @@
   },
   "description": "Local marketplace for the defer-tools mod.",
   "metadata": {
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "defer-tools",
       "source": "./plugins/defer-tools",
-      "version": "0.1.0",
-      "description": "Moves rarely used built-in tools behind ToolSearch, so their schemas load into context when Claude first calls them.",
+      "version": "0.2.0",
+      "description": "Moves rarely used built-in tools behind ToolSearch, so their schemas load into context when Claude first calls them, and lists chosen skills by name alone.",
       "author": {
         "name": "Brian"
       }

@@ -1,7 +1,7 @@
 {
   "name": "defer-tools",
-  "version": "0.1.0",
-  "description": "Moves rarely used built-in tools behind ToolSearch, so their schemas load into context when Claude first calls them.",
+  "version": "0.2.0",
+  "description": "Moves rarely used built-in tools behind ToolSearch, so their schemas load into context when Claude first calls them, and lists chosen skills by name alone.",
   "author": { "name": "Brian" },
   "license": "MIT"
 }

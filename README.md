@@ -15,6 +15,14 @@ On Claude Code 2.1.308 with Opus 5.5, the mod brought the System tools row of `/
 
 Workflow's schema is most of the saving. A tool listed in `permissions.deny` is removed before the mod runs and stays removed.
 
+The mod also lists these skills by name alone, without their descriptions:
+
+| Skill | Used for |
+| --- | --- |
+| `terminal-browser` | Showing and driving a page in a terminal pane, when another skill names it |
+
+Skills have no ToolSearch, so nothing tells Claude when to use a skill listed this way. List a skill only when another skill or `CLAUDE.md` names it.
+
 ## Install
 
 This repo is also the marketplace that lists the mod. From any Claude Code session:
@@ -27,7 +35,7 @@ Answer `y` to add the marketplace, then pick a scope. The mod moves the tools wh
 
 ## How it works
 
-The mod hooks `tool.describe` for each listed tool and answers with the engine's description and `isDeferred: true`, and Claude Code announces the moved tools to Claude as new deferred tools. To change the list, edit `DEFERRED_TOOLS` in `plugins/defer-tools/hooks/register.ts`.
+The mod hooks `tool.describe` for each listed tool and answers with the engine's description and `isDeferred: true`, and Claude Code announces the moved tools to Claude as new deferred tools. For skills, it hooks `prompt.attachment` for the skill listing and cuts each listed skill's line down to its name. To change either list, edit `DEFERRED_TOOLS` or `DEFERRED_SKILLS` in `plugins/defer-tools/hooks/register.ts`.
 
 ## Development
 

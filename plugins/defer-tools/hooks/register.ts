@@ -9,6 +9,14 @@ export const DEFERRED_TOOLS = [
   'CronList',
 ] as const
 
+export const DEFERRED_SKILLS = ['terminal-browser'] as const
+
+const nameOnly = (line: string) => {
+  const skill = DEFERRED_SKILLS.find(name => line.startsWith(`- ${name}: `))
+
+  return skill ? `- ${skill}` : line
+}
+
 export const register: Register = on => {
   for (const tool of DEFERRED_TOOLS) {
     on('tool.describe', { tool }, async ($, e, next) => ({
@@ -16,4 +24,10 @@ export const register: Register = on => {
       isDeferred: true,
     }))
   }
+
+  on('prompt.attachment', { type: 'skill_listing' }, async ($, e, next) => {
+    const { text } = await next(e)
+
+    return { text: text === null ? null : text.split('\n').map(nameOnly).join('\n') }
+  })
 }

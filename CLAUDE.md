@@ -8,4 +8,4 @@
 2. `.claude-plugin/marketplace.json`: the matching per-plugin `version` entry.
 3. `.claude-plugin/marketplace.json`: the top-level `metadata.version`.
 
-**Tool list**: a change to `DEFERRED_TOOLS` updates the table in `README.md`.
+**Lists**: a change to `DEFERRED_TOOLS` or `DEFERRED_SKILLS` updates its table in `README.md`.
